@@ -7,8 +7,14 @@ function onSubmit(event) {
   event.preventDefault();
 
   const data = Object.fromEntries(new FormData(event.target).entries());
-}
+  console.log(data);
 
-let happy = document.querySelector("#happy");
-let sad = document.querySelector("#sad");
-let calm = document.querySelector("#calm");
+  let mood = data.mood;
+  let input = data.userText;
+
+  if (mood === "happy") {
+    suggestion.textContent = "Yay! Keep shining! 😊";
+    // something for the image
+    //user response
+  }
+}

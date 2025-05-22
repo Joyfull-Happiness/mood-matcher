@@ -21,8 +21,7 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-label,
-input {
+label {
   display: block;
   margin-top: 1em;
   font-weight: bold;
@@ -53,7 +52,6 @@ button:focus {
 }
 
 input {
-  text-align: center;
   font-size: 1rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
