@@ -34,6 +34,16 @@ label {
   margin-top: 1em;
   font-weight: bold;
 }
+body.happy {
+  background: #f1e78d;
+}
+
+body.sad {
+  background: #d0b4eb;
+}
+body.calm {
+  background: #f0b767;
+}
 
 select,
 button {
