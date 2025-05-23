@@ -1,5 +1,21 @@
-const form = document.querySelector(".mood-form");
-const suggestion = document.querySelector(".suggestion");
+let form = document.querySelector(".mood-form");
+let output = document.querySelector(".suggestion");
+
+// This is for the emoji images
+let imgAlt = "";
+let imgSrc = "";
+
+// this is for the output message
+let message = document.createElement("h2");
+message.textcontent = output;
+
+// This is for the emoji images
+let img = document.createElement("img");
+img.alt = imgAlt;
+img.src = imgSrc;
+
+// this is to show the user's input
+let paragraph = document.createElement("p");
 
 form.addEventListener("submit", onSubmit);
 
@@ -13,14 +29,25 @@ function onSubmit(event) {
   let input = data.userText;
 
   if (mood === "happy") {
-    suggestion.textContent = "Yay! Keep shining! 😊";
-
-    // something for the image
-    var imgHappy = document.createElement("imgHappy");
-    img.src = "https://cdn-icons-png.flaticon.com/512/742/742751.png";
-    document.body.appendChild(imgHappy);
-
-    //user response
-    userText.push(dataObject);
+    message.textContent = "Yay! Keep shining! 😊";
+    paragraph.textContent = `You Said: ${input}`;
+    imgAlt = "happy face";
+    imgSrc = "images/happy.png";
+  } else if (mood === "sad") {
+    message.textContent = "It's okay to feel sad. Sending hugs 💙";
+    paragraph.textContent = `You Said: ${input}`;
+    imgAlt = "sad face";
+    imgSrc = "images/sad.png";
+  } else if (mood === "calm") {
+    message.textContent = "Wow keep it up! Emotional balance is everything ☺️";
+    paragraph.textContent = `You Said: ${input}`;
+    imgAlt = "calm face";
+    imgSrc = "images/calm.png";
+  } else {
+    message.textContent = "It's ok sometimes I don't feel anything either.💪🏽";
   }
+
+  output.appendChild(message);
+  output.appendChild(paragraph);
+  output.appendChild(img);
 }
