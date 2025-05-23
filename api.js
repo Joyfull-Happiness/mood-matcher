@@ -1,11 +1,14 @@
+// i'm making the variables form and output and connecting them to the form in html and the class suggestion. I am also making
 let form = document.querySelector(".mood-form");
 let output = document.querySelector(".suggestion");
 
-// This is for the emoji images
+// This is to hold space for the atributes imgAlt and imgSrc when i input them into the if/else statements in my function
+
 let imgAlt = "";
 let imgSrc = "";
 
-// this is for the output message
+// this creates teh h2 element and saves in it the variable message.
+// line 13 adds the message to the output
 let message = document.createElement("h2");
 message.textcontent = output;
 
@@ -14,7 +17,7 @@ let img = document.createElement("img");
 img.alt = imgAlt;
 img.src = imgSrc;
 
-// this is to show the user's input
+// this adds the paragrph element for the teplate literal that we are using for the user's input
 let paragraph = document.createElement("p");
 
 form.addEventListener("submit", onSubmit);
@@ -28,6 +31,7 @@ function onSubmit(event) {
   let mood = data.mood;
   let input = data.userText;
 
+  //write
   if (mood === "happy") {
     message.textContent = "Yay! Keep shining! 😊";
     paragraph.textContent = `You Said: ${input}`;
@@ -53,4 +57,15 @@ function onSubmit(event) {
   output.appendChild(message);
   output.appendChild(paragraph);
   output.appendChild(img);
+
+  submitBtn.style.display = "none";
+}
+
+// and getting rid of the suggestion class
+
+function onReset(event) {
+  // this function is reseting the form,
+  form.reset;
+
+  // replacing the submit button with a reset button,
 }
