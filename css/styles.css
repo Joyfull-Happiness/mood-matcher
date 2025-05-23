@@ -45,7 +45,9 @@ body.calm {
   background: #f0b767;
 }
 
-select,
+#resetBtn {
+  display: none;
+}
 button {
   display: block;
   width: 100%;

@@ -1,6 +1,8 @@
 // i'm making the variables form and output and connecting them to the form in html and the class suggestion. I am also making
 let form = document.querySelector(".mood-form");
 let output = document.querySelector(".suggestion");
+let submitBtn = document.getElementById("submitBtn");
+let resetBtn = document.getElementById("resetBtn");
 
 // This is to hold space for the atributes imgAlt and imgSrc when i input them into the if/else statements in my function
 
@@ -59,13 +61,16 @@ function onSubmit(event) {
   output.appendChild(img);
 
   submitBtn.style.display = "none";
+
+  // show it on form submit resetBtn.style.display = "block";
+  resetBtn.style.display = "block";
 }
 
-// and getting rid of the suggestion class
+// add event listener (click on form submit connect to the reset button
+form.addEventListener("submit", onReset);
 
 function onReset(event) {
   // this function is reseting the form,
-  form.reset;
-
-  // replacing the submit button with a reset button,
+  form.reset();
+  suggestion.style.disply = "none";
 }
