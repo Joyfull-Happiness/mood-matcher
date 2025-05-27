@@ -74,3 +74,32 @@ function onReset(event) {
   form.reset();
   suggestion.style.disply = "none";
 }
+
+/* 1. Debug the code below so that it runs correctly. 
+   2. When you have finished, thoroughly add comments to the code. 
+ */
+
+// setting up the variable for time to hold the number 8 which represents the time of day
+let time = 8;
+
+// this function is trying to figure out the right greeting to push out to the console (or user) depneding on what time of day it is.
+function whichGreeting() {
+  // 	here i'm declaring the variable "greeting" and giving it the input of "good morning" and cosole logging the good morning greeting all under the if condition that time < 10
+  if (time < 10) {
+    let greeting = "Good morning";
+    console.log(greeting);
+  }
+  // 	Here i created an else if statement in case the input of the variable let time changes. Now i am adding the condition that if the time is between 10 or 20 show the greeting variable with it's updated input of "good day" then console log the greeting
+  else if (time > 10 && time < 20) {
+    greeting = "Good day";
+    console.log(greeting);
+  }
+
+  // 	Here i created the else statment to give an evening message for any other time in putted into the let time variable. the greeting variable is now updated to show the message "good evening". if the other two conditions above it are not met.
+  else {
+    greeting = "Good evening";
+    console.log(greeting);
+  }
+  // this is calling the function to start the greeting function
+  whichGreeting();
+}
