@@ -35,10 +35,12 @@ function onSubmit(event) {
   let mood = data.mood;
   let input = data.userText;
 
-  //the following is a conditional that states if the mood (inputed from the form) = happpy then do the following
+  //the following is a series of conditions that states if the mood (inputed from the form) = "fill int he blank"then do the following
+  // for the first if statement it's showing. If the mood=happy then
   // show the message Yay! Keep shining! 😊, show the user response and show the happy face emjoi
-  // the folllowing conditionals are somewhat similar they say if the first condition is not met and the user inputs the sad mood then do the
-  // the following respective
+  // if the previous condition is not met then go to the next condition to see if it matches the UI
+  //  it's going to update the UI according to the users choice in the form.
+
   if (mood === "happy") {
     message.textContent = "Yay! Keep shining! 😊";
     paragraph.textContent = `You Said: ${input}`;
@@ -73,10 +75,11 @@ function onSubmit(event) {
 }
 
 // add event listener (click on form submit connect to the reset button
-form.addEventListener("submit", onReset);
+resetBtn.addEventListener("click", onReset);
 
 function onReset(event) {
   // this function is reseting the form,
   form.reset();
+
   suggestion.style.disply = "none";
 }
