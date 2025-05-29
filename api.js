@@ -24,16 +24,21 @@ let paragraph = document.createElement("p");
 
 form.addEventListener("submit", onSubmit);
 
+// this is the function that says on form submit activate this event
 function onSubmit(event) {
+  // stop the default settings on the site from activating.
   event.preventDefault();
-
+  // this is creating a variable that contains the data from the form entries and console logs it
   const data = Object.fromEntries(new FormData(event.target).entries());
   console.log(data);
-
+  // these are the variables for the two intputs in the form to be used later in the if else statements.
   let mood = data.mood;
   let input = data.userText;
 
-  //write
+  //the following is a conditional that states if the mood (inputed from the form) = happpy then do the following
+  // show the message Yay! Keep shining! 😊, show the user response and show the happy face emjoi
+  // the folllowing conditionals are somewhat similar they say if the first condition is not met and the user inputs the sad mood then do the
+  // the following respective
   if (mood === "happy") {
     message.textContent = "Yay! Keep shining! 😊";
     paragraph.textContent = `You Said: ${input}`;
@@ -55,14 +60,15 @@ function onSubmit(event) {
   } else {
     message.textContent = "It's ok sometimes I don't feel anything either.💪🏽";
   }
-
+  // this is giving an output that is needed to show the message, paragraph, and image at the bottom of the screeen underneath the form
   output.appendChild(message);
   output.appendChild(paragraph);
   output.appendChild(img);
+  // show it on form submit don't show the submit button";
 
   submitBtn.style.display = "none";
 
-  // show it on form submit resetBtn.style.display = "block";
+  // show it on form submit show the reset button";
   resetBtn.style.display = "block";
 }
 
