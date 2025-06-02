@@ -76,3 +76,10 @@ function onSubmit(event) {
 
 // add event listener (click on form submit connect to the reset button
 resetBtn.addEventListener("click", onReset);
+
+function onReset(event) {
+  // this function is reseting the form,
+  form.reset();
+
+  suggestion.style.disply = "none";
+}
