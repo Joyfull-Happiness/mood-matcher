@@ -77,9 +77,15 @@ function onSubmit(event) {
 // add event listener (click on form submit connect to the reset button
 resetBtn.addEventListener("click", onReset);
 
-function onReset(event) {
-  // this function is reseting the form,
-  form.reset();
+//How would you change this to log "the vegetable is called {veggie name}"?
+const veggies = ["carrot", "broccoli", "spinach", "pepper"];
+for (let i = 0; i < veggies.length; i++) {
+  console.log(`the vegetable is called ${veggies[i]}`);
+}
 
-  suggestion.style.disply = "none";
+// Array 2: Fruits
+//How would you change this to log every other fruit?
+const fruits = ["apple", "banana", "cherry", "date"];
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[(i += 1)]);
 }
